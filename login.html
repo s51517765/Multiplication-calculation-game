@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Twitter Login</title>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link type="text/css" rel="stylesheet" href="css.css" />
+
+    <style>
+        html {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>おめでとうございます！ランキング入りです。</h1>
+    <div id="result">
+        <div id="displayName"></div>
+        <div id="score0">
+            <div class="result">スコア</div>
+            <div id="score" class="result_">-1</div><br>
+        </div>
+        <div id="difficulty0">
+            <div class="result">難易度</div>
+            <div id="difficulty" class="result_">-1</div><br>
+        </div>
+    </div>
+    <div>ランキングに名前を残すにはTwitter IDによるLoginをしてください。</div>
+    <div id="firebaseui-auth-container"></div>
+    <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/3.5.2/firebase-ui-auth__ja.js"></script>
+    <script src="config.js"></script>
+    　　
+    <a href="https://s51517765.firebaseapp.com/9999/">
+        <h2>ランキングに名前を残したくない方はこちらからHomeへ</h2>
+    </a>
+    <script>
+        var data = (window.location.search).slice().split('&');  //https://qiita.com/ma_me/items/03aaebb5dc440b380244
+        var score = data[0].split('=')[1];
+        var selected_difficulty = data[1].split('=')[1];
+        document.getElementById("score").innerHTML = score;
+        document.getElementById("difficulty").innerHTML = selected_difficulty;
+
+        //----------------------------------------------
+        // Firebase UIの設定
+        //----------------------------------------------
+        var urlQuery = window.location.search;
+
+        var uiConfig = {
+            // ログイン完了時のリダイレクト先
+            signInSuccessUrl: 'https://s51517765.firebaseapp.com/9999/done.html' + urlQuery,
+
+            // 利用する認証機能
+            signInOptions: [
+                firebase.auth.TwitterAuthProvider.PROVIDER_ID
+            ],
+        };
+
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+</body>
+
+</html>

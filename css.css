@@ -1,0 +1,134 @@
+
+input[type=text] {
+    width: 30px;
+    height: 50px;
+}
+
+html {
+    font-size: 13px;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 14px;
+    color: red;
+}
+
+
+
+div.no {
+    display: inline-block;
+    font-size: 30px;
+}
+
+div.point {
+    font-size: 30px;
+    color: blue;
+}
+div.result {
+   display: inline-block;
+    font-size: 20px;
+}
+div.name {
+   display: inline-block;
+    font-size: 20px;
+}
+div.result_ {
+    display: inline-block;
+    font-size: 30px;
+    color: blue;
+}
+div.result_ {
+    display: inline-block;
+    font-size: 20px;
+}
+div.diff_td{
+    display: inline-block;
+    font-size: 20px;
+    border: 2px solid #FF9900;
+}
+div.result_td{
+    display: inline-block;
+    font-size: 30px;
+    color: blue;
+    border: 2px solid #FF9900;
+}
+div.name_td{
+    display: inline-block;
+    font-size: 30px;
+    border: 2px solid #FF9900;
+}
+
+
+input.ans {
+    border: 3;
+    padding: 10px;
+    font-size: 25px;
+    color: #aaa;
+    border: solid 1px #000000;
+    margin: 0 0 10px;
+    width: 85px;
+}
+
+
+table{
+  width: 400px;
+  border-collapse:separate;
+  border-spacing: 0;
+}
+
+table th:first-child{
+  border-radius: 5px 0 0 0;
+}
+
+table th:last-child{
+  border-radius: 0 5px 0 0;
+  border-right: 1px solid #3c6690;
+}
+
+table th{
+  text-align: center;
+  color:white;
+  background: linear-gradient(#829ebc,#225588);
+  border-left: 1px solid #3c6690;
+  border-top: 1px solid #3c6690;
+  border-bottom: 1px solid #3c6690;
+  box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+  width: 25%;
+  padding: 10px 0;
+}
+
+table td{
+  text-align: center;
+  border-left: 1px solid #a8b7c5;
+  border-bottom: 1px solid #a8b7c5;
+  border-top:none;
+  box-shadow: 0px -3px 5px 1px #eee inset;
+  padding: 10px 0;
+}
+
+table td:last-child{
+  border-right: 1px solid #a8b7c5;
+}
+
+table tr:last-child td:first-child {
+  border-radius: 0 0 0 5px;
+}
+
+table tr:last-child td:last-child {
+  border-radius: 0 0 5px 0;
+}
+
+@media screen and (max-width: 429px) {
+    div.item {
+        width: 330px;
+        height: 370px;
+    }
+
+        div.item img {
+            height: 200px; /* ����px�� */
+        }
+}

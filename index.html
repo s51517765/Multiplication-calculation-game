@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>99 x 99 インド人に挑戦！</title>
+    <meta http-equiv="content-type" charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- スマホ用の表示拡大-->
+    <link rel="stylesheet" type="text/css" href="css.css">
+</head>
+
+<body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
+    <div id="top"></div>
+    <div>
+        <a class="twitter-hashtag-button" data-text="インド人に挑戦！暗算99x99。　"
+            data-url="https://s51517765.firebaseapp.com/9999/" data-lang="ja" data-show-count="false">Tweet</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <br>
+    </div>
+
+    <h1>99 x 99</h1>
+    <p>これは最大99 x 99までの掛け算の速解きを練習するアプリです。</p>
+    <h1>あなたは何問解けるかな？</h1>
+    <p>インドでは2桁の掛け算の暗唱がされているとかいないとか…。<br>日本の技術者の実力を見せてやれ！</p>
+
+    <h2>制限時間は60秒！</h2>
+    <p>"z"の入力でpassするショートカットができます。</p>
+    <form name="form1">
+        <!-- radioボタンのグループ化はformでくくる-->
+        <input name="difficulty" type="radio" value="9">9 x 9
+        <input name="difficulty" type="radio" value="radio19">19 x 19
+        <input name="difficulty" type="radio" value="radio9" checked>99 x 99
+    </form>
+    <h2> 半角テキスト(数字)入力モードにしてください。</h2>
+    <p>準備が出来たら　→
+        <input type="button" id="btnStart" value="Start" onclick="start();">
+    </p>
+
+    <div id="no1" class="no">
+        _
+    </div>
+    <div id="x" class="no">
+        x
+    </div>
+    <div id="no2" class="no">
+        _
+    </div>
+    <div id="e" class="no">
+        =
+    </div>
+    <div id="a" class="no">
+        <input id="ans" class="ans">
+    </div>
+    <p>
+        <input type="button" id="btnPass" value="Pass" onclick="pass();">
+    </p>
+    <div>
+        得点<br>
+        <div id="score" class="score">0</div>
+    </div>
+    <h2>Top Score</h2>
+    <table id="Top score">
+
+        <!--  参考CSS  https://webliker.info/75964/ -->
+        <th>難易度</th>
+        <th>スコア</th>
+        <th>Twitter ID</th>
+        <tr id="9">
+            <td id="9_diff">難易度9</td>
+            <td id="9_score"></td>
+            <td id="9_name" class="name_td"></td>
+        </tr>
+        <tr id="19">
+            <td id="19_diff">難易度19</td>
+            <td id="19_score"></td>
+            <td id="19_name"></td>
+        </tr>
+        <tr id="99">
+            <td id="99_diff">難易度99</td>
+            <td id="99_score"></td>
+            <td id="99_name"></td>
+        </tr>
+    </table>
+
+    <p>© 2019 <a href="https://twitter.com/s51517765" target="_blank">プログラミング素人</a></p>
+    <a href="#top">▲Top</a>
+
+    <script type="text/javascript" src="config.js" charset="utf-8"></script>
+    <script type="text/javascript" src="main.js" charset="utf-8"></script>
+
+</body>
+
+</html>

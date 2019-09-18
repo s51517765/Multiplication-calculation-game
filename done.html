@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link type="text/css" rel="stylesheet" href="css.css" />
+  <meta charset="utf-8">
+  <title>ランクインしました！</title>
+  <meta http-equiv="Refresh" content="3;URL=index.html">
+</head>
+
+<body>
+  <h1>...Please wait</h1>
+  <a href="https://s51517765.firebaseapp.com/9999/">
+    <h2>Homeへ</h2>
+  </a>
+
+  <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
+  <script type="text/javascript" src="config.js" charset="utf-8"></script>
+  <script type="text/javascript" src="main.js" charset="utf-8"></script>
+
+  <script>
+    var db = firebase.database();       //.jsの読み込み順番に注意                                                                                                                                         
+    var database99 = db.ref("/9999");
+
+    firebase.auth().onAuthStateChanged((user) =>
+    {
+      let h1 = document.querySelector('h1');
+      let info = document.querySelector('#info');
+
+      if (user)
+      {
+        var data = (window.location.search).slice().split('&');  //https://qiita.com/ma_me/items/03aaebb5dc440b380244
+        var score = data[0].split('=')[1];
+        var selected_difficulty = data[1].split('=')[1];
+        h1.innerHTML = `${user.displayName}さんが記録を更新しました！`;
+
+        updateNewScpre(score, selected_difficulty, user.displayName, user.uid);
+      }
+      else
+      {
+        h1.innerText = 'Not Login';
+      }
+    });
+  </script>
+</body>
+
+</html>
