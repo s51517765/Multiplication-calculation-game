@@ -1,6 +1,8 @@
 # Multiplication-calculation-game
 Multiplication calculation game with JavaScript and Firebase
 
+<img src="https://github.com/s51517765/Multiplication-calculation-game/blob/master/9999.gif">
+
 https://twitter.com/s51517765/status/1174154584345833472
 
 ## 動作要件 (Requirements)
